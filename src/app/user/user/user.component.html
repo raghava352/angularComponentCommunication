@@ -1,0 +1,32 @@
+<div style="width: 80%; float:left">
+    <form [formGroup]="userProfile" (ngSubmit)="onSubmit(userProfile)">
+
+        <div>
+            <label>
+                First Name:        
+            </label>
+            <input type="text" formControlName="firstName">
+        </div>
+        
+        <div>
+            <label>
+                Last Name:        
+            </label>
+            <input type="text" formControlName="lastName">
+        </div>
+
+        <div>
+            <label>
+                Zip:        
+            </label>
+            <input type="number" formControlName="zipCode">
+        </div>
+
+        <div *ngIf="userAlreadyExists">
+            User already exists. Please enter different values!
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
